@@ -7,7 +7,7 @@ int main(){
     int StudentsScore ;
     int question;
 
-    cout << "How many students are there in your class?"<< "\n";
+    /*cout << "How many students are there in your class?"<< "\n";
     cin >> students ;
 
     cout << "Number of questions : ";
@@ -18,6 +18,8 @@ int main(){
 
     cout << "Students : " << students << "\n";
     cout << "Question : " << question << "\n";
-    cout << "Total score : "<< StudentsScore << "\n";
+    cout << "Total score : "<< StudentsScore << "\n";*/
+
+    
 
 }
