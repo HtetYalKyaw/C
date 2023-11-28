@@ -1,6 +1,5 @@
 #include<iostream>
 #include<cmath>
-
 using namespace std;
 
 int main(){
@@ -15,14 +14,9 @@ int main(){
     cout << "Enter input for B : " << b ;
     cin >> b;
 
-    a = pow (a , 2);
-    b = pow (b , 2);
+    c = sqrt(pow(a , 2)+ pow(b , 2));
 
-    c =sqrt( a + b );
-
-
-    cout << "C: " << c ;
+    cout << "Side C: " << c ;
     
     return 0;
-    
 }
