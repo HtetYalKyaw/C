@@ -17,15 +17,15 @@ int main(){
     cout << "C: " << c ;
     return 0;*/
 
-    const x;
+    int grade ;
     cout << "Enter students Grade: ";
-    cin >> x;
+    cin >> grade ;
 
 
-    switch (x)
+    switch (grade)
     {
-    case (x<100):
-        cout << "You got A. You did great!";
+    case A:
+        cout << " You did great!";
         break;
     
     default:
