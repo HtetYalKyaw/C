@@ -1,37 +1,33 @@
 #include<iostream>
-#include<cmath>
-
 using namespace std;
 
-int main(){
-    /*double a;
-    double b;
-    double c;
-    cout << "Enter input for A : " << a ;
-    cin >> a;
-    cout << "Enter input for B : " << b ;
-    cin >> b;
-    a = pow (a , 2);
-    b = pow (b , 2);
-    c =sqrt( a + b );
-    cout << "C: " << c ;
-    return 0;*/
+bool isHungry (string yn){
+    return yn == "Y" ;
+}
 
-    int grade ;
-    cout << "Enter students Grade: ";
-    cin >> grade ;
+int main (){
 
+    string yn;
+    cout << "Are you hungry? \nEnter Y/N: ";
+    cin >> yn;
 
-    switch (grade)
+    if (yn == "Y" || yn == "N")
     {
-    case A:
-        cout << " You did great!";
-        break;
-    
-    default:
-        break;
+        if(isHungry(yn)) 
+            cout << "Go Eat some Food!"; 
+        
+        else 
+        
+            cout << "Go to sleep!";
     }
+    else 
+        {
+        cout << "Invalid input. Please type Y/N";
+        }
+
+        return 0;
 
 
-    
+
+
 }
