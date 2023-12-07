@@ -16,7 +16,7 @@ int main(){
     number % 2 ? cout << "ODD!" : cout << "EVEN!";*/
 
 
-    bool hungry = true;
+    bool hungry = true ;
 
     //hungry ? cout << "Eat some Food!" : cout << " Go to sleep! ";
     cout << ( hungry ? "You are Hungry!": "You are full!");
