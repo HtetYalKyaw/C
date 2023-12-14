@@ -6,6 +6,8 @@ using namespace std;
     //name.append()
     //name.at() use to point number position
     //name.insert(0, "T") use to replace number
+    //name.find(' ') use to find array no. of letter
+    //name.erase(0, 3) use to delete number of array
 int main() {
     string name;
     cout << "Enter Your Name: ";
