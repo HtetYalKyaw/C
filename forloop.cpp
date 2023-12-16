@@ -12,7 +12,7 @@ int main(){
 
     for(i = 1; i<= 20; i++){
     if (i == 15){
-        continue;}
+        continue;} // break; continue;
     cout << i << endl;
     }
 
