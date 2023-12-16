@@ -2,28 +2,30 @@
 #include<ctime>
 using namespace std;
 
-int main() {
+int main(){
     int guess;
-    int randomNum;
     int tries;
-    
+    int randomNum;
+
     srand(time(NULL));
-    randomNum = (rand() % 6 + 1);
+    randomNum = (rand() % 6) + 1;
+
     do{
-        cout << "Guess a number from 1-6 for a chance to win awesome PRIZES! :";
-    
-        if (!(cin >> guess)) {
-        // Input was not successful (e.g., user entered a non-integer)
-        cout << "Invalid input. Please enter a number." << endl;
-        return 1; // Return a non-zero value to indicate an error
+        cout << "Choose A number Between 1 - 6 to win awsome PRICES!!\n";
+
+        if(!(cin >> guess)){
+            cout << "Please Enter a number:" << endl;
+            return 1;
         }
         tries++;
-        if (randomNum == guess) {
-        cout << "Congratulations! You have won an iPhone 14 Max Pro!\n";
-        } else {
-        cout << "Try again!"<< endl;
+
+        if(guess == randomNum){
+            cout << "Congradulations ! You are WINNER!!" << "\n" ;
+        }else{
+            cout << "Try again!\n";
         }
-    }while(guess != randomNum);
-    cout << "Number of tries " << tries << '!'<<endl;
+        
+    }while(guess!=randomNum);
+ cout << "Number of tries : " << tries << endl;
     return 0;
 }
