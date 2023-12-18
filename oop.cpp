@@ -2,7 +2,11 @@
 #include<limits>
 using namespace std;
 
-class Employee{
+class AbstractEmployee{
+    virtual void askforPromotion() = 0;
+};
+
+class Employee:AbstractEmployee {
 private:
     string Name;
     string Profession;
@@ -41,25 +45,33 @@ public:
         Profession = profession;
         Age = age;
     }
+    void askforPromotion(){
+        if(Age >= 18){
+            cout << Name << " got Promoted.";
+        }else{
+            cout << Name << " ,You didn't got promoted. ";
+        }
+    }
+
 
 };
 
 int main(){
 
-    Employee employee1("Htet Yal Kyaw", "Unreal Engine", 24);
+    Employee employee1(" Htet Yal Kyaw", "Unreal Engine", 24);
     employee1.IntroduceYourSelf();
   
 
-    Employee emplyoee2("Shin Min Thwe", "HYK's wife", 24);
+    Employee emplyoee2(" Shin Min Thwe", "HYK's wife", 24);
     emplyoee2.IntroduceYourSelf();
 
     employee1.setAge(26);
     cout << employee1.getName() << " is " << employee1.getAge() << " Years old.";
    
-    emplyoee2.setProfession("HYK's bitch.");
+    emplyoee2.setProfession(" bitch ");
     cout << emplyoee2.getName() << " is " << employee1.getName() << "'s " << emplyoee2.getProfession()<< endl;
 
-
-
+    employee1.askforPromotion();
+    emplyoee2.askforPromotion();
 
 }
