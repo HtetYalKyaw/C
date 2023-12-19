@@ -58,15 +58,15 @@ public:
 
 int main(){
 
-    Employee employee1(" Htet Yal Kyaw", "Unreal Engine", 24);
+    Employee employee1("Htet Yal Kyaw", "Unreal Engine", 24);
     employee1.IntroduceYourSelf();
   
 
-    Employee emplyoee2(" Shin Min Thwe", "HYK's wife", 24);
+    Employee emplyoee2("Shin Min Thwe", "HYK's wife", 24);
     emplyoee2.IntroduceYourSelf();
 
     employee1.setAge(26);
-    cout << employee1.getName() << " is " << employee1.getAge() << " Years old.";
+    cout << employee1.getName() << " is " << employee1.getAge() << " Years old. ";
    
     emplyoee2.setProfession(" bitch ");
     cout << emplyoee2.getName() << " is " << employee1.getName() << "'s " << emplyoee2.getProfession()<< endl;
