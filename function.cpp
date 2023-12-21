@@ -8,7 +8,7 @@ void HappyBirthday (){
     cout << "Happy Birthday to "<< name << endl;
     cout << "Happy Birthday to "<< name << endl;
     cout << "Happy Birthday dear "<< name << endl;
-    cout << "Happy Birthday to "<< age << "years old Boy." << endl;
+    cout << "Happy Birthday to "<< age << " years old Boy." << endl;
 }
 
 int main(){
@@ -18,7 +18,6 @@ int main(){
 
     cout << "Enter Your Age: " << endl;
     cin >> age;
-
 
     HappyBirthday();
 }
