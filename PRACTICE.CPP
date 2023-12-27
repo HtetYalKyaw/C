@@ -1,67 +1,32 @@
 #include<iostream>
-#include<limits>
 using namespace std;
-class EmployeeAbstract{
-    virtual void Askforpromotion() = 0;
-};
 
-class Employee:EmployeeAbstract {
-private:
-    int Age;
-    string Name;
-    string Profession;
-public:
-    void setName(string name){
-        Name = name;
-    }
-    string getName(){
-        return Name;
-    }
+int SearchArray(string array[], int size, string element);
+int main(){
+    string Foods[]= {"Humbergers", "Pizza", "Coca-cola", "Pepsi"};
+    int size = sizeof(Foods)/sizeof(string);
+    int index;
+    string myNum;
 
-    void setAge(int age){
-        Age = age;
-    }
-    int getAge(){
-        return Age;
-    }
+    cout << "Enter an element to search : " ;
+    getline(cin, myNum);
 
-    void setprofession(string profession){
-        Profession = profession;
-    }
-    string getprofession(){
-        return Profession;
-    }
+    index = SearchArray(Foods, size, myNum);
 
-    void IntroduceYourSelf(){
-        cout << "Name -"<< Name << endl;
-        cout << "Profession -"<< Profession << endl;
-        cout << "Age- " << Age << endl;
+    if(index != -1){
+        cout << myNum << " is at index " << index << '\n';
+    }else{
+        cout << myNum << " is not in array."<< '\n';
     }
-    Employee (string name, string profession, int age){
-        Name = name;
-        Age = age;
-        Profession = profession;
-    }
+    return 0;
 
-    void Askforpromotion(){
-        if (Age <= 30){
-            cout << Name << " got Promoted."<< endl;
-        }else{
-            cout << "Sorry," << Name << ", you didnt get promoted.";
+}
+int SearchArray(string array[], int size, string element){
+    for(int i =1; i < size; i++){
+        if(array[i] == element){
+            return i;
         }
+
     }
-
-
-
-};
-
-int main (){
-
-    Employee employee1("Htet Yal Kyaw", "Unreal Engine developer", 24);
-    employee1.IntroduceYourSelf(); 
-    employee1.Askforpromotion();   
-
-    Employee employee2("Shin Min Thwe", "Former Bitch", 65);
-    employee2.Askforpromotion();
-
+    return -1;
 }
