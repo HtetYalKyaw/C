@@ -1,32 +1,18 @@
 #include<iostream>
+#include<algorithm>
 using namespace std;
 
-int SearchArray(string array[], int size, string element);
+
 int main(){
-    string Foods[]= {"Humbergers", "Pizza", "Coca-cola", "Pepsi"};
-    int size = sizeof(Foods)/sizeof(string);
-    int index;
-    string myNum;
 
-    cout << "Enter an element to search : " ;
-    getline(cin, myNum);
+    int array[] = {5, 3, 2, 1 ,6 ,7 , 8, 4, };
+    int size = sizeof(array)/sizeof(int);
 
-    index = SearchArray(Foods, size, myNum);
+    sort(array, array + size);
 
-    if(index != -1){
-        cout << myNum << " is at index " << index << '\n';
-    }else{
-        cout << myNum << " is not in array."<< '\n';
+    cout << "Sorted array : " ;
+    for (int i = 0; i < size; i++){
+        cout << array[i] << " ";
     }
     return 0;
-
-}
-int SearchArray(string array[], int size, string element){
-    for(int i =1; i < size; i++){
-        if(array[i] == element){
-            return i;
-        }
-
-    }
-    return -1;
 }
