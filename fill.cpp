@@ -5,10 +5,11 @@ int main(){
 
     //fill() = fill a range of elements with a specified value fill 
     //          (begins, end, value)
+    const int SIZE = 10;
+    string Food[SIZE];
 
-    string Food[10];
-
-    fill(Food, Food + 10, "Pizza");
+    fill(Food, Food + (SIZE/2), "Pizza") ;
+    fill( Food + (SIZE/2), Food + SIZE, "Humburger");
 
     for (string food : Food){
         cout << food << " " ;
