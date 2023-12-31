@@ -34,7 +34,7 @@ int main() {
     }
 
     cout << "\nHere is the List of Orders:\n";
-    for (size_t i = 0; i < Foods.size(); i++) {
+    for (int i = 0; i < Foods.size(); i++) {
         cout << "Food: " << Foods[i] << " ( " << Quantities[i] << " )" << '\n';
     }
 
