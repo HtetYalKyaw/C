@@ -9,6 +9,19 @@ int main (){
     // nullptr = keyword represents a null pointer literal
     // nullptrs are helpful when determining if an address was successfully assigned to a pointer
 
+    //when using pointer ,be careful that your code isnt 
+    //dereferencing null or pointing to free memory 
+    //this will cause undefined behavior.
+    int *pointer = nullptr;
+    int x = 123;
 
-    
+    pointer = &x;
+
+    if (pointer == nullptr){
+        cout << "This address is not assigned yet.";
+    }else{
+        cout << "This address is assigned.\n";
+        cout << *pointer;
+    }
+    return 0;
 }
