@@ -1,18 +1,37 @@
-#include <iostream>
-#include <algorithm>
+#include<iostream>
+#include<cctype>  // Include cctype for toupper function
+using namespace std;
+
+// Function to convert all grades to uppercase
+void convertToUppercase(char grades[], int size) {
+    for (int i = 0; i < size; i++) {
+        grades[i] = toupper(grades[i]);
+    }
+}
 
 int main() {
-    char charArray[] = {'b', 'a', 'd', 'c', 'e'};
-    int arraySize = sizeof(charArray) / sizeof(char);
+    char *pGrades = nullptr;
+    int size;
 
-    // Using std::sort to sort the array
-    std::sort(charArray, charArray + arraySize);
+    cout << "How many grades to enter: ";
+    cin >> size;
 
-    // Displaying the sorted array
-    std::cout << "Sorted array: ";
-    for (int i = 0; i < arraySize; ++i) {
-        std::cout << charArray[i] << " ";
+    pGrades = new char[size];
+
+    for (int i = 0; i < size; i++) {
+        cout << "Enter grade #" << i + 1 << ": ";
+        cin >> pGrades[i];
     }
+
+    // Convert all grades to uppercase
+    convertToUppercase(pGrades, size);
+
+    cout << "Entered grades (uppercase): ";
+    for (int i = 0; i < size; i++) {
+        cout << pGrades[i] << " ";
+    }
+
+    delete[] pGrades;
 
     return 0;
 }
