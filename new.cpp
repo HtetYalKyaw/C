@@ -11,7 +11,7 @@ template <typename T> T myMax(T x, T y)
 }
 
 int main()
-{
+{ 
 	// Call myMax for int
 	cout << myMax<int>(3, 7) << endl;
 	// call myMax for double
