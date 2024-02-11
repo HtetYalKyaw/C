@@ -20,7 +20,7 @@ int main (){
 
     cout << *pName << '\n';
     cout << *pAge << '\n';
-    cout << *pFreePizzas << '\n';
+    cout << *pFreePizzas<< '\n';
     
     return 0;
 }
