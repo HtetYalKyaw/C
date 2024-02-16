@@ -1,42 +1,49 @@
-#include <iostream>
-#include <vector>
-#include<limits>
+#include<iostream>
+#include<ctime>
+
 using namespace std;
 
-int main() {
-    vector<string> Foods;
-    vector<int> Quantities;
+int AttackHero(int HeroDamage, int &enemyHP, double criticalChance, double criticalDamageMultiplier);
 
-    string temp;
-    int amount;
+int main (){
+    srand(time(0)); // Seed for random number generation
 
-    cout << "*Enter the Foods you'd like to order and the quantity (or enter 'Q' to finish)*" << endl;
+    char temp;
+    int HeroDamage = 5;
+    int enemyHP = 100;
+    double criticalChance = 0.20;
+    double criticalDamageMultiplier = 0.60;
 
-    while (true) {
-        cout << "Food: ";
-        getline(cin, temp);
+    AttackHero(HeroDamage, enemyHP, criticalChance, criticalDamageMultiplier); 
 
-        if (temp == "Q" || temp == "q") {
-            break;
-        }
-
-        cout << "Quantity: ";
-        while (!(cin >> amount) || amount <= 0) {
-            cin.clear();
-            cin.ignore(numeric_limits<streamsize>::max(), '\n');
-            cout << "Invalid quantity. Please enter a positive number: ";
-        }
-
-        cin.ignore(); // Clear the newline character from the input buffer
-
-        Foods.push_back(temp);
-        Quantities.push_back(amount);
-    }
-
-    cout << "\nHere is the List of Orders:\n";
-    for (int i = 0; i < Foods.size(); i++) {
-        cout << "Food: " << Foods[i] << " ( " << Quantities[i] << " )" << '\n';
-    }
+    cout << "Congratulations, the enemy has perished." << endl;
 
     return 0;
+}
+
+int AttackHero(int HeroDamage, int &enemyHP, double criticalChance, double criticalDamageMultiplier){
+    char temp;
+    do {
+        cout << "Enter A to attack: ";
+        cin >> temp;
+        if (temp == 'a' || temp == 'A') {
+            // Check for critical hit
+            bool isCritical = (rand() / static_cast<double>(RAND_MAX)) < criticalChance;
+
+            // Calculate damage
+            int damageDealt = HeroDamage;
+            if (isCritical) {
+                damageDealt *= (1 + criticalDamageMultiplier);
+                cout << "Critical Hit! ";
+            }
+
+            // Apply damage to enemy
+            enemyHP = max(enemyHP - damageDealt, 0);
+            cout << "The Enemy HP is " << enemyHP << endl;
+        } else {
+            cout << "Please Enter a referred character." << endl;
+        }
+    } while (enemyHP > 0);
+
+    return enemyHP;
 }
